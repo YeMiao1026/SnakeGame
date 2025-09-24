@@ -1,0 +1,109 @@
+Please help me build a Snake Game using HTML + CSS + JavaScript (vanilla, no frameworks). The game should include the following features:
+
+1. Main Menu (UI)
+
+A central menu screen with the following options:
+
+Single Player
+
+Single Player vs AI
+
+Multiplayer (Online)
+
+A clean and centered layout with hover effects for buttons.
+
+The title "Snake Game" is displayed at the top.
+
+2. Single Player Mode
+
+The game board is a square grid rendered in a Canvas.
+
+The player controls the snake using WASD keys.
+
+Normal food spawns randomly:
+
+Eating food makes the snake longer.
+
+Eating food increases movement speed.
+
+Score is displayed at the top-left corner.
+
+If the snake collides with itself → Game Over, with a "Restart" button shown.
+
+3. Single Player vs AI
+
+The player controls their snake, while an AI-controlled snake plays against them.
+
+AI behavior logic:
+
+Chases the nearest food.
+
+Tries to avoid walls and player collisions.
+
+Difficulty settings:
+
+Easy: moves somewhat randomly.
+
+Normal: targets food but not always avoids collisions.
+
+Hard: smarter pathfinding, avoids traps, and aggressively goes for food.
+
+Win/Lose conditions:
+
+If either the player or AI crashes into itself or the other snake → that snake dies.
+
+If the timer ends, the player with the higher score wins.
+
+The AI snake should be clearly distinguishable with a different color.
+
+Game rules:
+
+Each player has their own snake with a unique color.
+
+Food spawns are managed by the server and synced across clients.
+
+Death conditions:
+
+Hitting oneself → death.
+
+Hitting the opponent’s body → death.
+
+Head-to-head collision → both die.
+
+When a player dies, broadcast the result and display the winner.
+
+The game UI should also show a player list and scores below the canvas.
+
+5. Special Foods (Power-ups & Hazards)
+
+In addition to normal food, special food items spawn randomly:
+
+Bonus Food (Gold): Grants +5 extra points, no speed increase.
+
+Slow Down Food (Blue): Temporarily decreases snake speed for 3 seconds.
+
+Poison Food (Purple): Decreases score and shortens snake by 2 segments.
+
+Invisible Food (White/Transparent): Makes the snake’s tail invisible for 5 seconds.
+
+Spawn rules:
+
+Every 10 seconds, one random special food may appear.
+
+Only one special food can exist at a time.
+
+Each special food has a distinct color to differentiate it.
+
+6. Technical Requirements
+
+Provide complete working code with comments:
+
+index.html → main menu + game canvas
+
+style.css → basic UI styling
+
+script.js → front-end game logic (supports single player, AI, and multiplayer with special foods)
+
+server.js → Node.js WebSocket server (manages game state sync for multiplayer)
+
+The code should run directly without external frameworks.

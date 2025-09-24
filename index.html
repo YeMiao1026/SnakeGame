@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="app">
+    <header><h1>Snake Game</h1></header>
+
+    <!-- Main Menu -->
+    <main id="menu" class="center-screen">
+      <div class="menu-box">
+        <h2>Main Menu</h2>
+        <button id="btn-single">Single Player</button>
+        <button id="btn-ai">Single Player vs AI</button>
+        <button id="btn-mp" style="display: none;">Multiplayer (Online)</button>
+        <small class="hint">Use WASD to play. Canvas grid-based. For multiplayer, run server and enter nickname.</small>
+      </div>
+    </main>
+
+    <!-- Game Screen -->
+    <section id="game-screen" class="hidden center-screen">
+      <div class="top-row">
+        <div id="score">Score: 0</div>
+        <div id="mode-indicator">Mode:</div>
+        <div id="timer" class="timer"></div>
+      </div>
+
+      <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+      <div class="below-canvas">
+        <div id="player-list" class="player-list"></div>
+        <div id="controls">
+          <button id="btn-pause">Pause</button>
+          <button id="btn-restart" class="hidden">Restart</button>
+          <button id="btn-back">Back to Menu</button>
+        </div>
+      </div>
+
+      <!-- AI options overlay -->
+      <div id="ai-options" class="panel hidden">
+        <h3>AI Difficulty</h3>
+        <button class="ai-diff" data-diff="easy">Easy</button>
+        <button class="ai-diff" data-diff="normal">Normal</button>
+        <button class="ai-diff" data-diff="hard">Hard</button>
+      </div>
+
+      <!-- Multiplayer overlay -->
+      <div id="mp-panel" class="panel hidden">
+        <h3>Multiplayer</h3>
+        <label>Nickname: <input id="mp-name" placeholder="Player1" /></label>
+        <div class="row">
+          <button id="mp-create">Create Room</button>
+          <input id="mp-room-input" placeholder="room-id"/>
+          <button id="mp-join">Join Room</button>
+        </div>
+        <small id="mp-status" class="hint"></small>
+      </div>
+
+      <!-- Game over panel -->
+      <div id="game-over" class="panel hidden">
+        <h2 id="game-over-text">Game Over</h2>
+        <button id="go-restart">Restart</button>
+        <button id="go-menu">Main Menu</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
